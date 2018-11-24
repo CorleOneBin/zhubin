@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>海报画廊</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<style type="text/css">
+		
+			*{padding:0; margin: 0;}
+			body{
+				background-color: #fff;
+				color: #555;
+				font-family: 'Avenir Next','Lantinghei SC';
+				font-size: 14px;
+				-webkit-font-smoothing: antialiased;   /* 给子元素添加3D效果*/
+			}
+		</style>
+		
+	</head>
+	<body onselectstart="return false;">  <!-- 防止页面的文字被选中-->
+			<div class="wrap" id="wrap">
+				<div class="photo  photo_front" onclick="turn(this)" id="photo_{{index}}">   <!-- photo负责xy的移动，photo-wrap 负责3D的翻转-->
+					<div class="photo-wrap"> <!-- 背面和反面被包含在这个里面，然后photo-wrap转换，实现背反面的转换-->
+						<div class="side side-front">
+							<p class="image"><img src="img/{{img}}"></p>  <!-- 先占位，后面直接替换改值-->
+							<p class="caption">{{caption}}</p>	
+						</div>
+						<div class="side side-back">
+							<p class="desc">{{desc}}</p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+	</body>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</html>

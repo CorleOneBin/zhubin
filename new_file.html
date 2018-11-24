@@ -1,0 +1,48 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+	</head>
+	<body>
+     <button id="btnAdd">+</button>
+     <button id="btnReduce" >-</button>
+     <button id="btnRead" >夜间模式</button>
+     <div id="divContent"  style="font-size:14px;">
+     	可通过 JavaScript （以及其他编程语言）对 HTML DOM 进行访问。所有 HTML 元素被定义为对象，而编程接口则是对象方法和对象属性。方法是您能够执行的动作（比如添加或修改元素）。属性是您能够获取或设置的值（比如节点的名称或内容）。
+     </div>
+     <script>
+     	function addSize(){
+     		var txtContent=document.getElementById('divContent');
+     		var sizeText=parseInt(txtContent.style.fontSize);
+     		sizeText++;
+     		txtContent.style.fontSize=sizeText+'px';
+     	}
+     	document.getElementById('btnAdd').onclick=addSize;
+     	document.getElementById('btnReduce').onclick=function(){
+     		var txtContent=document.getElementById('divContent');
+     		var sizeText=parseInt(txtContent.style.fontSize);
+     		sizeText--;
+     		txtContent.style.fontSize=sizeText+'px';
+     	};
+     	document.getElementById('btnRead').onclick=function(){
+//   		document.getElementsByTagName('body')[0];
+//          document.querySelector('body');
+//          document.querySelectorAll('body')[0];
+            var txtBtn=document.getElementById('btnRead');
+            if(txtBtn.innerText=='夜间模式'){
+            	document.body.style.background='#000000';
+                document.body.style.color='#fff';
+                txtBtn.innerText='日间模式';
+            }
+            else{
+            	document.body.style.background='#fff';
+                document.body.style.color='#000';
+                txtBtn.innerText='夜间模式';
+            }
+     	};
+     </script>
+	<body>
+    
+</html>
